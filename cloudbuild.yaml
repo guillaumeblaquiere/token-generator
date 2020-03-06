@@ -12,6 +12,6 @@ steps:
     args:
       - -c
       - |
-        gsutil cp win64/token-generator.exe gs://temp-veolia-export/token-generator/$BRANCH_NAME/win64/
-        gsutil cp linux64/token-generator gs://temp-veolia-export/token-generator/$BRANCH_NAME/linux64/
-        gsutil cp darwin64/token-generator gs://temp-veolia-export/token-generator/$BRANCH_NAME/darwin64/
+        gsutil cp win64/token-generator.exe gs://token-generator/$BRANCH_NAME/win64/
+        gsutil cp linux64/token-generator gs://token-generator/$BRANCH_NAME/linux64/
+        gsutil cp darwin64/token-generator gs://token-generator/$BRANCH_NAME/darwin64/
