@@ -1,0 +1,17 @@
+steps:
+  - name: 'gcr.io/cloud-builders/go'
+    entrypoint: "/bin/sh"
+    args:
+      - -c
+      - |
+        GOARCH=amd64 GOOS=windows go build -o win64/token-generator.exe token-generator.go
+        GOARCH=amd64 GOOS=linux go build -o linux64/token-generator token-generator.go
+        GOARCH=amd64 GOOS=darwin go build -o darwin64/token-generator token-generator.go
+  - name: 'gcr.io/cloud-builders/gsutil'
+    entrypoint: "/bin/sh"
+    args:
+      - -c
+      - |
+        gsutil cp win64/token-generator.exe gs://temp-veolia-export/token-generator/$BRANCH_NAME/win64/
+        gsutil cp linux64/token-generator gs://temp-veolia-export/token-generator/$BRANCH_NAME/linux64/
+        gsutil cp darwin64/token-generator gs://temp-veolia-export/token-generator/$BRANCH_NAME/darwin64/

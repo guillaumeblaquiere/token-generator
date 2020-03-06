@@ -15,6 +15,14 @@ It can be used in collocation with an application where getting a token is too c
 * Simply perform a GET with an HTTP library on localhost and on the token-generator port for
 getting the signed id_token. 
 
+# Download
+
+Already compiled executable are available here
+
+  * [Windows/amd64](https://storage.cloud.google.com/token-generator/master/win64/token-generator.exe)
+  * [Linux/amd64](https://storage.cloud.google.com/token-generator/master/linux64/token-generator)
+  * [Darwin/amd64](https://storage.cloud.google.com/token-generator/master/darwin64/token-generator)
+
 # Run the server
 Run the token generator with these params:
 
