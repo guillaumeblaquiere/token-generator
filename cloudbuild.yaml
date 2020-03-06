@@ -12,6 +12,6 @@ steps:
     args:
       - -c
       - |
-        gsutil cp -h 'Content-Disposition:filename=token-generator.exe' win64/token-generator.exe gs://token-generator/$BRANCH_NAME/win64/
-        gsutil cp -h 'Content-Disposition:filename=token-generator' linux64/token-generator gs://token-generator/$BRANCH_NAME/linux64/
-        gsutil cp -h 'Content-Disposition:filename=token-generator' darwin64/token-generator gs://token-generator/$BRANCH_NAME/darwin64/
+        gsutil -h 'Content-Disposition:filename=token-generator.exe' cp win64/token-generator.exe gs://token-generator/$BRANCH_NAME/win64/
+        gsutil -h 'Content-Disposition:filename=token-generator'  cp linux64/token-generator gs://token-generator/$BRANCH_NAME/linux64/
+        gsutil -h 'Content-Disposition:filename=token-generator'  cp darwin64/token-generator gs://token-generator/$BRANCH_NAME/darwin64/
